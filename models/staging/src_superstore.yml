@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+    - name: superstore
+      description: Data from Superstore dataset
+      database: dbtsurajraw
+      schema: superstoresuraj
+      tables:
+
+          - name: orders
+            description: dbtsurajraw orders data
+            columns:
+              - name: order_id
+                description: Order identifier
+                tests:
+                  - not_null
+              - name: customer_id
+                description: Identifier of customer who made the order
+                tests:
+                  - not_null
+              - name: product_id
+                description: Identified of the product in the order
+                tests:
+                  - not_null
+          
+          - name: returned_orders
+            description: dbtsurajraw data for returned orders
+            columns:
+              - name: order_id
+                description: Order identifier
+                tests:
+                  - not_null
+
+          - name: sales_managers
+            description: dbtsurajraw data for regional sales managers
